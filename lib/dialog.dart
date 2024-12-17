@@ -20,62 +20,65 @@ Future<dynamic> showYesNoDialog(
           width: double.maxFinite,
           height: double.maxFinite,
           child: Scaffold(
-            body: Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(7)),
-                color: Colors.white,
-              ),
-              width: 341,
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(content,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+            backgroundColor: Colors.transparent,
+            body: Center(
+              child: Container(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(7)),
+                  color: Colors.white,
+                ),
+                width: 341,
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(content,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        )),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    SizedBox(
+                      width: 200,
+                      child: Center(
+                          child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          if (showNo)
+                            TextButton(
+                              onPressed: () {
+                                // appRouter.maybePop(false);
+                                Navigator.of(context).maybePop(false);
+                              },
+                              child: Text(
+                                noActionText ?? '',
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          if (showYes)
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).maybePop(true);
+                              },
+                              child: Text(
+                                yesActionText ?? '',
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                            )
+                        ],
                       )),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  SizedBox(
-                    width: 200,
-                    child: Center(
-                        child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        if (showNo)
-                          TextButton(
-                            onPressed: () {
-                              // appRouter.maybePop(false);
-                              Navigator.of(context).maybePop(false);
-                            },
-                            child: Text(
-                              noActionText ?? '',
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        if (showYes)
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).maybePop(true);
-                            },
-                            child: Text(
-                              yesActionText ?? '',
-                              style: const TextStyle(
-                                fontSize: 16,
-                              ),
-                            ),
-                          )
-                      ],
-                    )),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),
