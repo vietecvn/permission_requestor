@@ -1,0 +1,49 @@
+#name: permissition_request_plugin
+#description: "A new Flutter project."
+version: 0.0.1
+name: 'permisstion_request_plugin'
+#homepage:
+
+environment:
+  sdk: ^3.3.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  permission_handler: ^11.0.1
+  device_info_plus: ^9.1.0
+  package_info_plus: ^8.1.1
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  logger:
+
+  flutter_web_plugins:
+    sdk: flutter
+  web: ^0.5.1
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  freezed: ^2.4.5
+  build_runner: ^2.4.12
+#
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.vietec.app.plugin.permissition_request_plugin
+        pluginClass: PermisstionRequestPlugin
+      ios:
+        pluginClass: PermisstionRequestPlugin
+#      linux:
+#        pluginClass: PermisstionRequestPlugin
+#      macos:
+#        pluginClass: PermisstionRequestPlugin
+#      windows:
+#        pluginClass: PermisstionRequestPluginCApi
+#      web:
+#        pluginClass: PermisstionRequestPluginWeb
+#        fileName: permisstion_request_plugin_web.dart
