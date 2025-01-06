@@ -138,7 +138,11 @@ class PermissionRequest {
     }
   }
 
-  Future _gotoSettingDialog({required Message me, String? msType}) async {
+  Future _gotoSettingDialog(
+      {required Message me,
+      String? msType,
+      bool showYes = true,
+      bool showNo = true}) async {
     final String ms = me.getMessageDined(
         applicationName: _deviceInfo?.applicationName ?? '',
         messageType: msType);
@@ -149,8 +153,8 @@ class PermissionRequest {
         context: _context!,
         title: '',
         content: ms,
-        showYes: true,
-        showNo: true,
+        showYes: showYes,
+        showNo: showNo,
         noActionText: no,
         yesActionText: yes,
         isRootNavigator: true);
@@ -214,11 +218,12 @@ class PermissionRequest {
     }
   }
 
-  Future<bool> showDialogPermission({
-    required PermissionType type,
-    String customMessage = '',
-    Lang? lang,
-  }) async {
+  Future<bool> showDialogPermission(
+      {required PermissionType type,
+      String customMessage = '',
+      Lang? lang,
+      bool showYes = true,
+      bool showNo = true}) async {
     try {
       PermissionStatus? status;
       String msType = '';
@@ -266,9 +271,9 @@ class PermissionRequest {
             context: _context!,
             title: '',
             content: customMessage,
-            showYes: true,
+            showYes: showYes,
             yesActionText: message.ok,
-            showNo: true,
+            showNo: showNo,
             noActionText: message.cancel,
             isRootNavigator: false);
         if (rs == false) {
