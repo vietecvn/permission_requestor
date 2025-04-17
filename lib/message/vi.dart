@@ -14,7 +14,7 @@ class MessageViPermission extends Message {
   final String cancel = 'Huỷ';
 
   @override
-  final String ok = 'Ok';
+  final String ok = 'Tiếp tục';
 
   @override
   String getMessageDined({String? messageType, String? applicationName}) {

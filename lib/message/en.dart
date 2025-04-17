@@ -15,7 +15,7 @@ class MessageEnPermission extends Message {
   final String cancel = 'Cancel';
 
   @override
-  final String ok = 'Ok';
+  final String ok = 'Continue';
 
   @override
   String getMessageDined({String? messageType, String? applicationName}) {
