@@ -29,7 +29,7 @@ android {
         namespace = "com.vietec.app.plugin.permisstion_request_plugin"
     }
 
-    compileSdk = 34
+    compileSdk = 36
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
