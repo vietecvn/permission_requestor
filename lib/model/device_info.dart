@@ -6,6 +6,7 @@ part 'device_info.freezed.dart';
 
 @freezed
 abstract class DeviceInfo with _$DeviceInfo {
+  @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   factory DeviceInfo({
     @JsonKey(name: 'device_id') String? deviceId,
     @JsonKey(name: 'device_type', fromJson: convertDeviceType)
